@@ -17,6 +17,8 @@ Pizza.prototype.calcPrice = function () {
     this.price += 5;
   } else if (this.size === 11) {
     this.price += 3;
+  } else if (this.size === 8) {
+    this.price += 3;
   }
   return this.price;
 };
