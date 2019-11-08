@@ -8,19 +8,29 @@
   <title></title>
 </head>
 <body>
-  <h1><strong>Order Here</strong></h1> <br>
+  <h1 class="jumbotron"><strong>Order Here</strong></h1> <br>
   <div class="container">
-    <form id="">
-      <div class="form-group">
-        <label>Enter</label>
-        <input type="text" id="userInput">
+    <form id="order">
+      <div class="form-check" id="toppings">
+
+
+        <input class="form-check-input" type="checkbox" value="" id="toppings">
+        <label>Toppings</label>
       </div>
-      <button type="submit">Submit</button>
-    </form>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+        <label>Disabled checkbox</label>
+      </div>
+
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="priceOutput">
+      <p><span id="output"></span></p>
+    </div>
   </div>
-  <div id="answer">
-    <p><span id="output"></span></p>
-  </div>
-</div>
 </body>
 </html>
