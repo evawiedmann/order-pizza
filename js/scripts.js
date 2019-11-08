@@ -19,12 +19,13 @@ Pizza.prototype.calcPrice = function () {
 
 // User Interface
 $(document).ready(function() {
-  $("form#pizza").submit(function(event) {
+  $("form#order").submit(function(event) {
     event.preventDefault();
 
     let toppingsInputs = $("#toppings :checked");
     let toppingsArray = [];
-    let sizeInput = $("#size").val();
+    let sizeInput = parseInt($("select#size").val());
+    console.log(sizeInput);
 
     toppingsInputs.forEach(function(toppingsInput) {
       toppingsArray.push(toppingsInput.val());
