@@ -22,7 +22,19 @@ $(document).ready(function() {
   $("form#pizza").submit(function(event) {
     event.preventDefault();
 
+    let toppingsInputs = $("#toppings :checked");
+    let toppingsArray = [];
+    let sizeInput = $("#size").val();
+
+    toppingsInputs.forEach(function(toppingsInput) {
+      toppingsArray.push(toppingsInput.val());
+    })
+
+    let ourPizza = new Pizza(toppingsArray, sizeInput)
+    let price = ourPizza.calcPrice();
+
     $("#order").hide();
     $('#priceOutput').show();
+    $("#output").text();
   });
 });
