@@ -1,6 +1,6 @@
 // Business Logic
 function Pizza(toppings,size) {
-  this.toppings = toppings;
+  this.toppings = [];
   this.size = size;
   this.price = 0;
 }
@@ -30,18 +30,23 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
 
-    let toppingsInputs = $("input:checked").val();
     let toppingsArray = [];
+
+  let toppingsInputs = $("input:checkbox[name=type]:checked").each(function(){
+    toppingsArray.push($(this).val());
+});
+
+    // let toppingsInputs = $("input:checked").val();
+    console.log(typeof toppingsInputs);
     let sizeInput = $("select#size").val();
 
-toppingsArray.forEach(function(toppingsInput) {
-  toppingsArray.push(toppingsInputs);
-});
+// toppingsArray.forEach(function(toppingsInput) {
+//   toppingsArray.push(toppingsInputs);
+// });
 
       let ourPizza = new Pizza(toppingsArray, sizeInput);
       console.log(ourPizza);
       let price = ourPizza.calcPrice();
-      console.log(toppingsArray);
 
       $("#order").hide();
       $('#priceOutput').show();
