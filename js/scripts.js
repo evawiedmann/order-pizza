@@ -26,17 +26,17 @@ Pizza.prototype.calcPrice = function () {
 // User Interface
 $(document).ready(function() {
 
- let toppingsArray = [];
 
   $("form#order").submit(function(event) {
     event.preventDefault();
 
     let toppingsInputs = $("input:checked").val();
+    let toppingsArray = [];
     let sizeInput = $("select#size").val();
 
-  for(var i = 0; i < toppingsArray.length; i++) {
-        toppingsArray.push(toppingsInput);
-      };
+toppingsArray.forEach(function(toppingsInput) {
+  toppingsArray.push(toppingsInputs);
+});
 
       let ourPizza = new Pizza(toppingsArray, sizeInput);
       console.log(ourPizza);
