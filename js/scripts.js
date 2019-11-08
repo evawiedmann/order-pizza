@@ -25,23 +25,26 @@ Pizza.prototype.calcPrice = function () {
 
 // User Interface
 $(document).ready(function() {
+
+ let toppingsArray = [];
+
   $("form#order").submit(function(event) {
     event.preventDefault();
 
-    let toppingsInputs = $("#toppings:checked").val();
-    let toppingsArray = [];
+    let toppingsInputs = $("input:checked").val();
     let sizeInput = $("select#size").val();
 
   for(var i = 0; i < toppingsArray.length; i++) {
-        toppingsArray.push(toppingsInput.val());
+        toppingsArray.push(toppingsInput);
       };
 
       let ourPizza = new Pizza(toppingsArray, sizeInput);
+      console.log(ourPizza);
       let price = ourPizza.calcPrice();
+      console.log(toppingsArray);
 
       $("#order").hide();
       $('#priceOutput').show();
-      $("#output").text();
-      console.log(price);
+      $("#output").text(price);
     });
   });
