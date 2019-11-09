@@ -1,22 +1,18 @@
 // Business Logic
 function Pizza(toppings,size) {
-  this.toppings = toppings;
+  this.toppings = [];
   this.size = size;
   this.price = 0;
 }
 
 Pizza.prototype.calcPrice = function () {
-  this.toppings.forEach(function(toppings) {
+  this.toppings.forEach(function(topping) {
     this.price += 1;
   })
   if (this.size === 24) {
     this.price += 30;
-  } else if (this.size === 18) {
-    this.price +=25;
   } else if (this.size === 14) {
-    this.price += 23;
-  } else if (this.size === 11) {
-    this.price += 20;
+    this.price += 22;
   } else if (this.size === 8) {
     this.price += 15;
   }
@@ -30,15 +26,15 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
 
-    let toppingsInputs = ($("#toppings:checked").val());
     let toppingsArray = [];
-    let sizeInput = parseInt($("select#size").val());
-
-    toppingsArray.forEach(function(toppingsInput) {
-      toppingsArray.push(toppingsInputs);
+    let toppingsInputs = $("#toppings:checked");
+    let sizeInput = $("select#size").val();
+    toppingsInputs.forEach(function(toppingsInput) {
+      toppingsArray.push(toppingsInput.val());
     });
 
     let ourPizza = new Pizza(toppingsArray, sizeInput);
+    console.log(ourPizza);
     let price = ourPizza.calcPrice();
 
     $("#order").hide();
