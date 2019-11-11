@@ -7,24 +7,27 @@
 ## Description
 
 * #### The program returns a price based on size and number of toppings.
-  - Example Input: 1 topping, 24"
-  - Example Output: $32
+- Example Input: 1 topping, 24"
+- Example Output: $26
 
-* #### The program adds 2 for every added topping.
-  - Example Input: 2 toppings, 8"
-  - Example Output: $19
+* #### The program calculates $1 * radius in inches.
+- Example Input: 8"
+- Example Output: $8
+
+* #### The program adds $2 for every added topping.
+- Example Input: 2 toppings, 8"
+- Example Output: $12
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Install web browser_
+* _Download Bootstrap and jQuery_
+* _Go to https://github.com/evawiedmann/order-pizza
+
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_TBD_
 
 ## Support and contact details
 
