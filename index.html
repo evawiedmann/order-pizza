@@ -8,7 +8,9 @@
   <title></title>
 </head>
 <body>
-  <h1 class="jumbotron"><strong>Order Here</strong></h1> <br>
+  <br>
+  <br>
+  <h1><strong>Create Your Pie</strong></h1> <br>
   <div class="container">
     <form id="order">
       <div class="form-group">
@@ -16,27 +18,37 @@
         <select class="form-control" id="size">
           <option value=8>8"</option>
           <option value=14>14"</option>
+          <option value=16>16"</option>
+          <option value=20>20"</option>
           <option value=24>24"</option>
         </select>
       </div>
       <div id ="toppings">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="type" id="pepperoni">
+          <input class="form-check-input" type="checkbox" name="topping" value="pepperoni">
           <label>Pepperoni</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="type" id="sausage">
+          <input class="form-check-input" type="checkbox" name="topping" value="sausage">
           <label>Sausage</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="type" id="olives">
+          <input class="form-check-input" type="checkbox" name="topping" value="olives">
           <label>Olives</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="topping" value="bell-pepper">
+          <label>Bell Peppers</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="topping" value="pepperoncini">
+          <label>Pepperoncini</label>
         </div>
       </div>
       <button type="submit">Get Price</button>
     </form>
     <div id="priceOutput">
-      <p>Total: $<span id="output"></span></p>
+      <p>TOTAL: $<span id="output"></span></p>
     </div>
   </div>
 </body>
